@@ -113,7 +113,7 @@ def get_or_create_player(userid):
 # ─── APP VERSION ──────────────────────────────────────────────────────────────
 @app.route("/sgdz/getAppVersion", methods=["GET"])
 def get_app_version():
-    return ok({"version": "2.10.0", "needsUpdate": False, "obbValid": True})
+    return ok({"version": "2.5.0", "needsUpdate": False, "obbValid": True})
 
 # ─── FINGERPRINT (device identification) ─────────────────────────────────────
 @app.route("/sgdz/fingerPrint", methods=["GET", "POST"])
@@ -743,7 +743,7 @@ def cloud_api():
     username = request.args.get("username", "")
 
     if cmd == "getrevisionlog":
-        return ok({"log": [{"version": "2.10.0",
+        return ok({"log": [{"version": "2.5.0",
                              "notes": "Shadowgun: OpenZone revival server online!"}]})
     if cmd in ("getleaderboard", "getleaderboardself"):
         return ok({"rank": 1, "username": username,
@@ -773,7 +773,7 @@ def index():
         "server": "Shadowgun: Deadzone",
         "project": "Shadowgun: OpenZone",
         "status": "online",
-        "version": "2.10.0",
+        "version": "2.5.0",
         "users_online": len(users),
         "by": "vurkz-dev / Aulo Oa Company"
     })
